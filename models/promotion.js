@@ -1,6 +1,6 @@
 //Week 2 Workshop Assignment--task 2
 const mongoose = require('mongoose');
-const Schema = mongoose('Schema');
+const Schema = mongoose.Schema;
 
 require('mongoose-currency').loadType(mongoose);
 const Currency = mongoose.Types.Currency;
