@@ -4,7 +4,7 @@ const User = require('./models/user');
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
-const verifyAdmin = require("./models/verifyAdmin");
+// const verifyAdmin = require("./models/verifyAdmin");
 
 const config = require('./config.js'); //config.js file
 
