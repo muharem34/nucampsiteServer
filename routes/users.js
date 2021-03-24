@@ -2,7 +2,7 @@ const express = require('express');
 const User = require('../models/user')
 const passport = require('passport');
 const authenticate = require('../authenticate');
-// const verifyAdmin = require('../models/verifyAdmin');
+const verifyAdmin = require('../models/verifyAdmin')
 
 const router = express.Router();
 
@@ -58,17 +58,10 @@ router.post('/login', passport.authenticate('local'), (req, res) => {
   res.json({success: true, token: token, status: 'You are successfully logged in!'});
 });
 
-// router.get(verifyAdmin("/logout", (req, res, next) => {
-//   if (req.session) {
-//     req.session.destroy();
-//     res.clearCookie("session-id");
-//     res.redirect("/");
-//   } else {
-//     const err = new Error("You are not logged in!");
-//     err.status = 403;
-//     return next(err);
-//   }
-// }));
-
+router.get('/logout', (req, res, next) => {
+  if (req.session) {
+      return next(err);
+  }
+});
 
 module.exports = router;
