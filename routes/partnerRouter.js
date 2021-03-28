@@ -79,7 +79,7 @@ partnerRouter.route('/:partnerId')
 
 partnerRouter.route('/:partnerId/comments')
 .options(cors.corsWithOptions, (req, res) => res.sendStatus(200))
-.get(ccors.cors, (req, res, next) => {
+.get(cors.cors, (req, res, next) => {
     Partner.findById(req.params.partnerId)
     .then(partner => {
         if (partner) {
